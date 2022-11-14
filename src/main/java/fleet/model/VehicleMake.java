@@ -16,6 +16,8 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @SequenceGenerator(name = "FMS_generator", sequenceName = "FMS_SEQ", allocationSize = 1)
-@AttributeOverride(name = "id", column = @Column(name = "VMK_ID"))
+@AttributeOverride(
+name = "id",
+column = @Column(name = "VMK-ID", nullable = false))
 public class VehicleMake extends CommonObject{
 }
