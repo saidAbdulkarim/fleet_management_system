@@ -1,9 +1,8 @@
 package fleet.model;
 
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
@@ -16,9 +15,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public class VehicleMake{
-    @Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "FMS_generator")
-	@SequenceGenerator(name = "FMS_generator", sequenceName = "FMS_SEQ", allocationSize = 1)
-	private Integer id;
+@SequenceGenerator(name = "FMS_generator", sequenceName = "FMS_SEQ", allocationSize = 1)
+@AttributeOverride(name = "id", column = @Column(name = "VMK_ID"))
+public class VehicleMake extends CommonObject{
 }
