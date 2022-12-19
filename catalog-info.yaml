@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: fleet_management_system
+  annotations:
+    github.com/project-slug: saidAbdulkarim/fleet_management_system
+spec:
+  type: other
+  lifecycle: unknown
+  owner: guests
